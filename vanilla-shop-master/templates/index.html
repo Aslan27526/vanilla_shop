@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+
+    <title>Vanilla Shop</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#"
+              >Products</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('create') }}"
+              >Create Product</span></a
+            >
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="cart.html"
+              >Cart (<span id="cart"></span>)</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="card-deck">
+        <div class="card" style="max-width: 14rem;">
+          <img
+            src="{{ url_for('static', filename='images/product1.jpg') }}"
+            class="card-img-top"
+            style="width: 100%; height: 15vw; object-fit: cover;"
+            alt="Banana Pie"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{products[0].name}}</h5>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-link product" id="1">Add to cart</button>
+            <button class="btn btn-link product" id='4' ><a href='edit/{{products[0].id}}'>edit</a></button>
+
+          </div>
+        </div>
+        <div class="card" style="max-width: 14rem;">
+          <img
+            src="{{ url_for('static', filename='images/product2.jpg') }}"
+            class="card-img-top"
+            style="width: 100%; height: 15vw; object-fit: cover;"
+            alt="Banana Pie"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{products[1].name}}</h5>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-link product" id="2">Add to cart</button>
+            <button class="btn btn-link product" id='3' ><a href='edit/{{products[1].id}}'>edit</a></button>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='js/main.js') }}"
+    ></script>
+  </body>
+</html>
